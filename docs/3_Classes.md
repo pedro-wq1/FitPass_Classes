@@ -1,85 +1,133 @@
-***Aluno***
+***Aluno***   
 RF01, RF04, RF05, RF06, RF10  
 - idAluno  
 - nome  
-- cpf  
-- email  
+- cpf
+- email    
 - telefone  
 - endereco  
 - rfid  
-- status  
+- status
 
-***Plano***
+- contratarPlano()
+- agendarAula()
+- cancelarAgendamento()
+- atualizarStatus()
+- registrarAcesso()
+- receberNotificacao()
+
+***Plano***  
 RF01, RF02, RF04  
 - idPlano  
 - nome  
 - tipo  
 - valor  
-- ativo  
+- ativo
 
-***Pagamento***
+- ativar()
+- desativar()
+- alterarValor()
+
+***Pagamento***  
 RF03, RF04, RF09  
-- idPagamento  
+- idPagamento   
 - data  
 - valor  
 - formaPagamento  
-- status  
+- status
 
-***Acesso***
+- registrar()
+- confirmar()
+- cancelar()
+
+***Acesso***  
 RF05, RF09  
 - idAcesso  
 - dataHora  
-- autorizado  
+- autorizado
 
-***Aula***
+- registrar()
+- autorizar()
+- negar()
+
+***Aula***  
 RF06, RF07, RF09  
 - idAula  
-- nome  
+- nome    
 - horario  
-- capacidadeMaxima  
+- capacidadeMaxima
 
-***Agendamento***
+- disponibilizarHorario()
+- reservarVaga()
+- liberarVaga()
+- registrarPresenca()
+
+***Agendamento***  
 RF06, RF10  
 - idAgendamento  
 - dataReserva  
-- status  
+- status
 
-***Presenca***
+- confirmar()
+- cancelar() 
+
+***Presenca***  
 RF07  
 - idPresenca  
 - data  
-- presente  
+- presente
 
-***AvaliacaoFisica***
-RF08, RF10  
+- registrar()
+- confirmar()   
+
+***AvaliacaoFisica***  
+RF08, RF10    
 - idAvaliacao  
 - data  
 - peso  
 - imc  
-- percentualGordura  
+- percentualGordura   
 - observacoes  
-- anexo  
+- anexo
 
-***Notificacao***
-- RF10  
+- registrar()
+- atualizarDados()
+- anexarArquivo()
+
+***Notificacao***  
+RF10  
 - idNotificacao  
 - tipo  
 - dataEnvio  
 - status  
-- mensagem  
+- mensagem
 
-***Instrutor***
+- enviar()
+- marcarComoLida()
+
+***abstract class Funcionario {}***
+
+***Instrutor***  
 RF07, RF08  
 - idInstrutor  
 - nome  
-- especialidade  
+- especialidade
 
-***Recepcionista***
+- registrarPresenca()
+- realizarAvaliacaoFisica()
+
+***Recepcionista***  
 RF01, RF03  
 - idRecepcionista  
-- nome  
+- nome
 
-***Gerente***
-RF02, RF09  
+- cadastrarAluno()
+- registrarPagamento() 
+
+***Gerente***  
+RF02, RF09   
 - idGerente  
-- nome  
+- nome
+
+- gerenciarPlanos()
+- emitirRelatorios()
